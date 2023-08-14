@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const serverless = require('serverless-http')
+const path = require("path")
 require('dotenv').config()
 
 const PORT = process.env.PORT || 3000;
@@ -18,7 +19,11 @@ mongoose
         console.log("Connection Successful");
     }).catch((e) => {
         console.log(e);
-    }); 
+    });
+
+app.get("/", (_req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'))
+})
 
 app.listen(3000, "0.0.0.0", () => {
     console.log(`Server Started at ${PORT}`)

@@ -1,7 +1,7 @@
 {
   "name": "nonogram-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Nonogram Backend with ExpressJS for public collections in game.",
   "main": "main.js",
   "scripts": {
     "start": "node ./src/api.js",

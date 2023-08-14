@@ -27,6 +27,10 @@ const gameSchema = mongoose.Schema({
             type: String,
         }
     }]],
+    makerName: {
+        required: true,
+        type: String
+    }
 }, { timestamps: true });
 
 const Game = mongoose.model('Game', gameSchema);

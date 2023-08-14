@@ -27,6 +27,7 @@ puzzlesRouter.post("/addPuzzle", async (req, res) => {
             type: game.type,
             numberOfLives: game.numberOfLives,
             solvedTable: game.solvedTable,
+            makerName: game.makerName
         })
 
         await gameValue.save();

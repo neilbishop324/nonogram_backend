@@ -9,7 +9,7 @@ puzzlesRouter.get("/puzzles", async (req, res) => {
         let limit = req.query.limit
         let skip = req.query.skip
 
-        const games = await Game.find({}).skip(skip).limit(limit)
+        const games = await Game.find({}).sort({date: -1}).skip(skip).limit(limit)
         res.status(200).json({ status: 200, games })
     } catch (e) {
         res.status(500).json({ status: 500, error: e.message })

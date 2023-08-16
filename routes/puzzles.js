@@ -38,4 +38,13 @@ puzzlesRouter.post("/addPuzzle", async (req, res) => {
     }
 })
 
+puzzlesRouter.get("/puzzleSize", async (req, res) => {
+    try {
+        const size = await Game.count()
+        res.status(200).json({ status: 200, size })
+    } catch (e) {
+        res.status(500).json({ status: 500, error: e.message, size: 0 })
+    }
+})
+
 module.exports = puzzlesRouter;

@@ -23,7 +23,7 @@ const gameSchema = mongoose.Schema({
             type: Number,
         },
         color: {
-            required: true,
+            required: false,
             type: String,
         }
     }]],

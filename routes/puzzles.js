@@ -23,7 +23,7 @@ puzzlesRouter.post("/addPuzzle", async (req, res) => {
         const { game } = req.body;
 
         let gameValue = new Game({
-            _id: game.id,
+            _id: game._id,
             size: game.size,
             type: game.type,
             numberOfLives: game.numberOfLives,

@@ -48,7 +48,7 @@ puzzlesRouter.get("/puzzleSize", async (req, res) => {
     }
 })
 
-puzzlesRouter.post("reportPuzzle", async (req, res) => {
+puzzlesRouter.post("/reportPuzzle", async (req, res) => {
     try {
         const { puzzleId } = req.body;
 

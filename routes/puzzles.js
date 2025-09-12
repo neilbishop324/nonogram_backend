@@ -1,5 +1,6 @@
 const express = require("express")
 const Game = require("../models/Game")
+const Report = require("../models/Report")
 const puzzlesRouter = express.Router()
 
 //Get Puzzles
@@ -44,6 +45,28 @@ puzzlesRouter.get("/puzzleSize", async (req, res) => {
         res.status(200).json({ status: 200, size })
     } catch (e) {
         res.status(500).json({ status: 500, error: e.message, size: 0 })
+    }
+})
+
+puzzlesRouter.post("reportPuzzle", async (req, res) => {
+    try {
+        const { puzzleId } = req.body;
+
+        const puzzle = await Game.findById(puzzleId);
+        if (!puzzle) {
+            return res.status(404).json({ status: 404, error: "Puzzle not found" });
+        }
+
+        const report = new Report({
+            _id: new mongoose.Types.ObjectId().toString(),
+            reportedPuzzleId: puzzleId
+        });
+
+        await report.save();
+
+        res.status(200).json({ status: 200 });
+    } catch (e) {
+        res.status(500).json({ status: 500, error: e.message });
     }
 })
 

@@ -58,7 +58,6 @@ puzzlesRouter.post("/reportPuzzle", async (req, res) => {
         }
 
         const report = new Report({
-            _id: new mongoose.Types.ObjectId().toString(),
             reportedPuzzleId: puzzleId
         });
 

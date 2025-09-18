@@ -4,8 +4,8 @@
   "description": "Nonogram Backend with ExpressJS for public collections in game.",
   "main": "main.js",
   "scripts": {
-    "start": "node ./src/api.js",
-    "dev": "nodemon ./src/api.js"
+    "start": "node ./api/index.js",
+    "dev": "nodemon ./api.index.js"
   },
   "keywords": [],
   "author": "",

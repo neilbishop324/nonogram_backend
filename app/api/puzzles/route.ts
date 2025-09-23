@@ -10,7 +10,7 @@ export async function GET(request: Request) {
         const skip = Number(searchParams.get('skip'));
 
         const games = await Game.find()
-            .sort({ date: -1 })
+            .sort({ createdAt: -1, _id: -1 })
             .skip(skip)
             .limit(limit);
 

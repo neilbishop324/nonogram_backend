@@ -1,22 +1,24 @@
 {
   "name": "nonogram-backend",
-  "version": "1.0.0",
-  "description": "Nonogram Backend with ExpressJS for public collections in game.",
-  "main": "main.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node ./api/index.js",
-    "dev": "nodemon ./api.index.js"
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "mongoose": "^7.4.3",
-    "serverless-http": "^3.2.0"
+    "mongoose": "^8.18.2",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
